@@ -1,0 +1,17 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block forms %}
+    <div class="forms-blog">
+        <div class="newAutor">
+            <h2>Novo Autor</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+            <div class="buttons-form">
+                <a href="{% url 'portfolio:blog' %}" class="btn btn-warning">Cancelar</a>
+                <input type="submit" value="Gravar" id="forms-button">
+            </div>
+        </div>
+    </div>
+{% endblock %}

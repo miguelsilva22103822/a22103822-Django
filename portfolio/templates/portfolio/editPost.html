@@ -1,0 +1,22 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block forms %}
+    <div class="forms-blog">
+        <div class="editPost">
+            <h2>Post</h2>
+            <form action="{% url 'portfolio:editPost' postId %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+            <div class="buttons-form">
+                <a href="{% url 'portfolio:blog' %}" role="button" class="btn btn-warning">Cancelar</a>
+                <input type="submit" value="Gravar" id="forms-button">
+                <a href="{% url 'portfolio:apagaPost' postId %}" role="button" class="btn btn-danger">Apagar</a>
+            </div>
+        </div>
+    </div>
+{% endblock forms %}
+
+
+
+

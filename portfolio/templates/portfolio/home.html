@@ -1,0 +1,94 @@
+<!-- home.html -->
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div class="paginas">
+        <div class="hero-page" id="home">
+            <div class="hero-page-texto">
+                <h1>Out of this World</h1>
+                <p>Apreciadora de café, música e séries horríveis - Estudante de Engenharia Informática nos tempos
+                    livres</p>
+                <a href="#contact-me">
+                    <button id="button">Contacta-me</button>
+                </a>
+            </div>
+            <div class="background-container"></div>
+        </div>
+        <div class="about-me" id="about-me">
+            <div class="container-about-me">
+                <h1>Sobre Mim</h1>
+                <div class="line aboutme"></div>
+                <p>
+                    Frequento a Licenciatura de Engenharia Informática na Universidade Lusófona. <br> <br>
+                    Tenho todo o gosto do mundo em pensar nas soluções mais pragmáticas para os problemas que encontro,
+                    e como tal um curso na área de TI fazia todo o sentido. <br> <br>
+                    Nos meus tempos livres gosto de aprender skills diferentes como edição de vídeo e edição de imagem,
+                    e como grande fã de música consigo passar longos minutos a fazer playlists personalizadas
+                </p>
+                <div class="line aboutme"></div>
+            </div>
+            <div class="skill-container">
+                <h1>Skills</h1>
+                <uo>
+                    <li>Java</li>
+                    <div class="lineskill java"></div>
+                    <li>Kotlin</li>
+                    <div class="lineskill kotlin"></div>
+                    <li>C</li>
+                    <div class="lineskill c"></div>
+                    <li>Python</li>
+                    <div class="lineskill python"></div>
+                    <li>HTML</li>
+                    <div class="lineskill html"></div>
+                    <li>CSS</li>
+                    <div class="lineskill css"></div>
+                    <li>Javascript</li>
+                    <div class="lineskill javascript"></div>
+                    <li>Django</li>
+                    <div class="lineskill django"></div>
+                </uo>
+            </div>
+        </div>
+        <div class="projects" id="projects">
+            <h1>Projetos</h1>
+            <div class="line lineprojetos"></div>
+            <div class="project-list">
+                {% for projeto in projetos %}
+                    <div class="projeto">
+                        <div class="projeto-head">
+                            <h2>{{ projeto.titulo }}</h2>
+                            <a class="material-symbols-outlined" target=”_blank” href="
+                            {% if projeto.link_repo != null %}
+                                {{ projeto.link_repo }}
+                            {% endif %}">
+                                open_in_new
+                            </a>
+                        </div>
+                        <div class="line lineprojetos" id="line-projeto-head"></div>
+                        <p>{{ projeto.ano }} - {{ projeto.cadeira }} <br>
+                            Autores: {{ projeto.pessoas }}
+                        </p>
+                        <p>{{ projeto.descricao }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="contact-me" id="contact-me">
+            <div class="horizontal-strip"></div>
+            <div class="formulario-text">
+                <div class="formulario">
+                    <h1>Contacta-me</h1>
+                    <form id="formulario" action="mailto:abmpires1999@gmail.com" method="get" enctype="text/plain">
+                        <input type="text" name="subject" id="infos" placeholder="Introduz o nome"
+                               class="form-input"><br>
+                        <input type="email" name="email" id="infos" placeholder="Introduz um email válido"
+                               class="form-input">
+                        <textarea name="body" id="msg" cols="30" rows="10"
+                                  placeholder="Introduz a tua mensagem"></textarea>
+                        <input type="submit" id="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

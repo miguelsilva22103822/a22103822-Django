@@ -1,0 +1,23 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block blog %}
+    <div class="blog">
+    <div class="comentarios">
+    <h2>Comentários</h2>
+    {% for comentario in comentarios %}
+        <div class="comentario">
+        <p>Post: {{ comentario.post.titulo }}</p>
+        <p>Comentário: {{ comentario.conteudo }}</p>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="button-comments">
+    <button>
+    <a href="{% url 'portfolio:newComentario' %}">Novo Comentário</a>
+</button>
+    <button>
+    <a href="{% url 'portfolio:blog' %}">Voltar ao Blog</a>
+    </button>
+    </div>
+    </div>
+{% endblock %}

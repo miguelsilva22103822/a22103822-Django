@@ -1,0 +1,49 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block blog %}
+    <div class="blog">
+    <div class="autores">
+        <h2>Autores</h2>
+        {% for autor in autores %}
+            <p>{{ autor.nome }} {{ autor.apelido }}</p>
+        {% endfor %}
+    </div>
+    <button>
+        <a href="{% url 'portfolio:newAuthor' %}" class="bananas">Novo Autor</a>
+    </button>
+    <div class="posts">
+        <h2>Posts</h2>
+        {% for post in posts %}
+            <div class="post">
+                <p>
+                    Titulo: {{ post.titulo }}
+                </p>
+                <p>
+                    Conteúdo: {{ post.conteudo }}
+                </p>
+                <p>
+                    Área: {{ post.area }}
+                </p>
+                <p>
+                    Likes: {{ post.like }}
+                </p>
+                <div class="button-comments">
+                    <button onclick="aumentaLike(post.id)">Add Like</button>
+                    <button onclick="diminuiLike(post.id)">Diminui Like</button>
+                </div>
+
+                <a href="{% url 'portfolio:editPost' post.id %}">Edita Post</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="button-comments" id="buttons-end">
+        <button>
+            <a href="{% url 'portfolio:newPost' %}">Novo Post</a>
+        </button>
+        <button>
+            <a href="{% url 'portfolio:comentarios' %}">Ver Comentários</a>
+        </button>
+    </div>
+    </div>
+
+{% endblock %}
