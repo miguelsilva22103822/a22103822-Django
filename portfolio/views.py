@@ -11,13 +11,5 @@ from .models import *
 from .forms import *
 
 
-def home_page_view(request):
-    return render(request, 'portfolio/home.html')
-
-
-def projects_page_view(request):
-    return render(request, 'portfolio/projects.html')
-
-
-def blog_view(request):
-    return render(request, 'portfolio/blog.html')
+def index_page_view(request):
+    return render(request, 'portfolio/index.html')

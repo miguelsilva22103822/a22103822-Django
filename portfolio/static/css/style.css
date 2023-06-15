@@ -161,7 +161,7 @@ h1 {
     0% {transform: rotate(-240deg);}
 
     100% {
-        
+
     }
 }
 
@@ -169,7 +169,7 @@ h1 {
     0% {transform: rotate(60deg);}
 
     100% {
-        
+
     }
 }
 
@@ -528,13 +528,13 @@ p {
     .menu .image {
         height: 30%;
     }
-    
+
     .menu .text {
         padding: 15px;
         display: flex;
         flex-flow: column;
     }
-    
+
     .menu .text p {
         margin-top: 10px;
         font-size: 1em;
@@ -557,13 +557,13 @@ p {
     .menu .image {
         height: 25%;
     }
-    
+
     .menu .text {
         padding: 10px;
         display: flex;
         flex-flow: column;
     }
-    
+
     .menu .text p {
         margin-top: 10px;
         font-size: 1em;
