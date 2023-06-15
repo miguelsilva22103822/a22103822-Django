@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+    <script src="sound.js" defer></script>
+    <script src="scroll.js" defer></script>
+    <script src="calculator.js" defer></script>
+    <script src="datetime.js" defer></script>
+    <script src="displayedcontent.js" defer></script>
+    <script src="playground.js" defer></script>
+    <script src="https://kit.fontawesome.com/a1320d93f1.js" crossorigin="anonymous"></script>
+    <title>Miguel Silva</title>
+</head>
+
+<body>
+
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="media/forestRain.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h1 id="fade-element">Miguel Silva</h1>
+
+    <div id="arrow-down">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <div id="arrow-up">
+        <div class="leftup"></div>
+        <div class="rightup"></div>
+    </div>
+
+    <div id="arrow-up-low">
+        <div class="leftup"></div>
+        <div class="rightup"></div>
+    </div>
+
+    <div id="scroll-up-btn"></div>
+
+    <header>
+        <div>
+            <button id="themetoggle" class="roundbutton"></button>
+            <h2 id="time"></h2>
+        </div>
+
+        <div>
+            <h2 id="date"></h2>
+            <button id="mutetoggle" class="roundbutton"></button>
+        </div>
+    </header>
+    
+    <div class="menu">
+
+        <div class="cards">
+            <div class="card" id="introduction">
+                <div class="image intro-img">
+    
+                </div>
+                <div class="text">
+                    <h2>
+                        Introduction
+                    </h2>
+                    <p>
+                        Hello, my name is Miguel, I'm a student at Lusofona.
+                    </p>
+                </div>
+                
+                <div class="button" id="introduction">
+                    <button>Click to read more</button>
+                </div>
+            </div>
+    
+            <div class="card" id="calculator">
+                <div class="image calc-img">
+    
+                </div>
+                <div class="text">
+                    <h2>
+                        Calculator
+                    </h2>
+                    <p>
+                        A simple calculator written in JavaScript.
+                    </p>
+                </div>
+                
+                <div class="button">
+                    <button>Click to try it</button>
+                </div>
+            </div>
+
+            <div class="card" id="playground">
+                <div class="image playground-img">
+    
+                </div>
+                <div class="text">
+                    <h2>
+                        Playground
+                    </h2>
+                    <p>
+                        Some JavaScript exercises.
+                    </p>
+                </div>
+                
+                <div class="button">
+                    <button>Click to see more</button>
+                </div>
+            </div>
+
+    </div>
+
+    <div id="calculator-page">
+        <div class="calculator">
+            <div id="screen"></div>
+
+            <div id="calculator-buttons">
+                <button data-action="clear">C</button>
+                <button data-action="divide"><i data-action="divide" class="fa-solid fa-divide"></i></button>
+                <button>(</button>
+                <button>)</button>
+    
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button data-action="multiply"><i data-action="multiply" class="fa-solid fa-xmark"></i></button>
+    
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button data-action="subtract"><i data-action="subtract" class="fa-solid fa-minus"></i></button>
+    
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button data-action="add"><i data-action="add" class="fa-solid fa-plus"></i></button>
+                
+                <button>0</button>
+                <button data-action="decimal">.</button>
+                <button data-action="calculate"><i data-action="calculate" class="fa-solid fa-equals"></i></button>
+    
+            </div>
+        </div>
+    </div>
+
+    <div id="introduction-page">
+        <div class="text">
+            <h2>Title</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium.
+            </p>
+        </div>
+    </div>
+
+    <div id="playground-page">
+        <div class="text">
+            <h2>JavaScript Playground</h2>
+            <br>
+            <h3>Make your meme</h3>
+            <p>Select an image for the meme:</p>
+            <div class="memebuttons">
+                <button id="meme1">Dog</button>
+                <button id="meme2">Shrek</button>
+                <button id="meme3">CJ</button>
+            </div>
+            <p>Insert a sentence for the meme:</p>
+            <input type="text" id="meme-text-input">
+            <p>Insert your name:</p>
+            <input type="text" id="name-input">
+            <br>
+            <div id="imgwithtextover">
+                <h2 class="font-effect-outline meme-text">Quando o professor Lucio pede para pôr uma frase motivacional</h2>
+            </div>
+            <p id="meme-author"></p>
+
+
+
+            <br>
+            <p id="datetime">Data atual: </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
