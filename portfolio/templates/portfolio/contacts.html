@@ -1,0 +1,24 @@
+<!-- contacts.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div class="center">
+        <div id="contactsContainer">
+            <h1>Contacts</h1>
+            <div id="contacts">
+                {% for contact in contacts %}
+                    <div>
+                        <div>
+                            <h2>{{ contact.name }}</h2>
+                            <p>{{ contact.image }}</p>
+                        </div>
+                        <div>
+                            <h2>{{ contact.link }}</h2>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

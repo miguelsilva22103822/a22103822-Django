@@ -11,5 +11,15 @@ from .models import *
 from .forms import *
 
 
-def index_page_view(request):
-    return render(request, 'portfolio/index.html')
+def index_view(request):
+    return render(request, 'portfolio/home.html')
+
+
+def blog_view(request):
+    blog_posts = {'posts': Post.objects.all()}
+    return render(request, 'portfolio/blog.html', blog_posts)
+
+
+def contacts_view(request):
+    contacts = {'contacts': Contact.objects.all()}
+    return render(request, 'portfolio/contacts.html', contacts)

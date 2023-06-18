@@ -1,4 +1,4 @@
-<!-- base.html -->
+<!-- layout.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,14 +8,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="{% static 'js/calculator.js' %}" defer></script>
-    <script src="{% static 'js/datetime.js' %}" defer></script>
-    <script src="{% static 'js/displayedcontent.js' %}" defer></script>
-    <script src="{% static 'js/playground.js' %}" defer></script>
-    <script src="{% static 'js/scroll.js' %}" defer></script>
-    <script src="{% static 'js/sound.js' %}" defer></script>
-    <script src="{% static 'js/theme.js' %}" defer></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/a1320d93f1.js" crossorigin="anonymous"></script>
 </head>
@@ -23,14 +15,19 @@
 <body>
 <header>
     <nav>
-        <a href="{% url 'portfolio:index' %}">Index</a>
+        <a href="{% url 'portfolio:home' %}"><h2>Home</h2></a>
+        <a href="{% url 'portfolio:blog' %}"><h2>Blog</h2></a>
+        <a href="{% url 'portfolio:contacts' %}"><h2>Contacts</h2></a>
     </nav>
 </header>
-<main>
-    {% block main %}
-    {% endblock main %}
-</main>
+
+{% block main %}
+{% endblock main %}
+
 <footer>
-    <div>ULusófona, 2023</div>
+    <h2>2023</h2>
+    <h2>Miguel Rodrigues Miranda Silva</h2>
+    <h2>Lusofona University</h2>
 </footer>
+
 </body>
