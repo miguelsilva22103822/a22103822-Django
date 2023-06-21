@@ -4,21 +4,18 @@
 
 {% block main %}
     <div class="center">
-        <div id="contactsContainer">
-            <h1>Contacts</h1>
-            <div id="contacts">
-                {% for contact in contacts %}
+        <h1>Contacts</h1>
+        <div class="center2">
+            {% for contact in contacts %}
+                <div class="contact">
                     <div>
-                        <div>
-                            <h2>{{ contact.name }}</h2>
-                            <p>{{ contact.image }}</p>
-                        </div>
-                        <div>
-                            <h2>{{ contact.link }}</h2>
-                        </div>
+                        <a href="{{ contact.link }}"><h1>{{ contact.name }}</h1></a>
                     </div>
-                {% endfor %}
-            </div>
+                    <div>
+                        <img src="{{ contact.image.url }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

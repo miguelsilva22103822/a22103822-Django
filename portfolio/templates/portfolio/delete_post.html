@@ -1,0 +1,12 @@
+<!-- add_post.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <h2>Add New Post</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

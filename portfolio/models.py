@@ -11,8 +11,9 @@ class Post(models.Model):
 
 
 class Contact(models.Model):
+    id = models.IntegerField
     name = models.CharField(max_length=100)
-    image = models.ImageField
+    image = models.ImageField(upload_to='icons/', null=True, blank=True)
     link = models.CharField(max_length=200)
 
     def __str__(self):
