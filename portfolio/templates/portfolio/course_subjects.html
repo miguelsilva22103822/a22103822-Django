@@ -1,0 +1,40 @@
+<!-- course_subjects.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+    <div class="center2">
+        {% for year in years %}
+            <div class="year_box">
+                <h1>Year {{ year.number }}</h1>
+                {% for semester in semesters %}
+                    {% if semester.year == year %}
+                        <div class="semester_box">
+                            <h2>Semester {{ semester.number }}</h2>
+                            {% for subject in subjects %}
+                                {% if subject.semester == semester %}
+                                    <div class="subject_box">
+                                        <h3>{{ subject }}</h3>
+                                        <h3>
+                                            {% for i in "12345" %}
+                                                {% if subject.ranking >= i|add:"0" %}
+                                                    &#9733; <!-- Full star -->
+                                                {% else %}
+                                                    &#9734; <!-- Empty star -->
+                                                {% endif %}
+                                            {% endfor %}
+                                        </h3>
+                                        <p class="click-to-show"><b>Teachers:</b></p>
+                                        {% for teacher in subject.person_set.all %}
+                                            <p class="click-to-show">{{ teacher.name }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

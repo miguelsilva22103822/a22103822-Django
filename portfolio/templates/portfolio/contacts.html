@@ -7,14 +7,34 @@
         <h1>Contacts</h1>
         <div class="center2">
             {% for contact in contacts %}
-                <div class="contact">
-                    <div>
-                        <a href="{{ contact.link }}"><h1>{{ contact.name }}</h1></a>
+                {% if contact.is_url_link %}
+                        <div class="contact">
+                            <a href="{{ contact.link_url }}">
+                                <div>
+                                    <h2>{{ contact.name }}</h2>
+                                </div>
+                                <div>
+                                    <img src="{{ contact.image.url }}" alt="">
+                                </div>
+                            </a>
+                            <div class="link-info">
+                                <h3>{{ contact.username }}</h3>
+                            </div>
+                        </div>
+                {% else %}
+                    <div class="contact">
+                        <div>
+                            <h2>{{ contact.name }}</h2>
+                        </div>
+                        <div>
+                            <img src="{{ contact.image.url }}" alt="">
+                        </div>
+                        <div class="link-info">
+                            <h3>{{ contact.username }}</h3>
+                        </div>
                     </div>
-                    <div>
-                        <img src="{{ contact.image.url }}" alt="">
-                    </div>
-                </div>
+                {% endif %}
+
             {% endfor %}
         </div>
     </div>

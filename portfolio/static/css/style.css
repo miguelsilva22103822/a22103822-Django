@@ -23,11 +23,12 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(240, 255, 255);
+    background-color: aliceblue;
 }
 
 h1 {
     font-size: 50px;
+    color: black;
 }
 
 nav {
@@ -47,11 +48,20 @@ nav a {
 }
 
 nav a:hover {
-    background-color: rgb(240, 255, 255);
+    background-color: aliceblue;
     color: black;
 }
 
 .center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.center_home {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -69,7 +79,7 @@ nav a:hover {
 }
 
 .container {
-    background-color: rgb(240, 255, 255);
+    background-color: aliceblue;
     margin: 1rem 15% 5rem 15%;
     display: flex;
     align-items: center;
@@ -113,14 +123,14 @@ nav a:hover {
     background-color: rgb(240, 240, 240);
 }
 
-.author {
+.lightText {
     color: rgb(100, 100, 100);
 }
 
 #homeBg {
     background-image: url("../media/homeBg.jpg");
     background-size: cover;
-    height: 100vh;
+    height: 93vh;
     width: 100%;
 }
 
@@ -142,14 +152,19 @@ nav a:hover {
 .contact {
     background-color: rgb(240, 240, 240);
     margin: 15px;
-    height: 400px;
+    height: 300px;
     width: 300px;
     border-radius: 5px;
+    position: relative;
+}
+
+.contact h2 {
+    color: black;
+    font-size: 40px;
 }
 
 .contact > div {
     position: relative;
-    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,6 +174,53 @@ nav a:hover {
 .contact img {
     max-height: 200px;
     max-width: 200px;
+}
+
+.contact .link-info {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(-40px);
+}
+
+.contact:hover .link-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-15px);
+}
+
+.year_box {
+    background-color: aliceblue;
+    margin: 15px;
+    width: 350px;
+}
+
+.semester_box {
+    background-color: rgb(0, 75, 120);
+    margin: 15px;
+    color: white;
+    padding: 7px;
+}
+
+.subject_box {
+    background-color: white;
+    color: black;
+    margin: 15px 8px 8px 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.center:last-of-type {
+    margin-bottom: 50px;
+}
+
+.click-to-show {
+    font-size: 0;
+    transition: font-size 0.3s ease;
+}
+
+.click-to-show.active {
+    font-size: 20px;
 }
 
 footer {
@@ -175,4 +237,89 @@ footer {
 footer > h2 {
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+.about_me_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.about_me_div div {
+    background-color: rgb(240, 240, 240);
+    margin: 20px 0 20px 0;
+    max-width: 75%;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    flex-flow: column;
+    text-align: justify;
+}
+
+.about_me_div div p {
+    font-size: 1.3em;
+}
+
+.about_me_div div p {
+    margin-top: 10px;
+}
+
+#center_projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects_container {
+    display: flex;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+#width_limit {
+    background-color: aliceblue;
+    max-width: 60vw;
+}
+
+.projects_container > div {
+    margin: 15px;
+    width: 600px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.project_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.project_image > img {
+    object-fit: cover;
+    width: 30%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    border-radius: 15px 0 0 15px;
+}
+
+.project_text {
+    position: absolute;
+    width: 70%;
+    right: 0;
+    padding: 10px
+}
+
+.project_text p {
+   text-align: justify;
 }

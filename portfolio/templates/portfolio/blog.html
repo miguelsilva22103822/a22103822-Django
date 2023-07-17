@@ -10,7 +10,8 @@
                         <div>
                             <div>
                                 <h2>{{ post.title }}</h2>
-                                <p class="author">Author: {{ post.author }}</p>
+                                <p class="lightText">Author: {{ post.author }}</p>
+                                <p class="lightText">{{ post.date|date:"d/m/Y H:i" }}</p>
                             </div>
                             <div>
                                 <form action="post/{{ post.id }}/delete" method="post" style="display: inline;">

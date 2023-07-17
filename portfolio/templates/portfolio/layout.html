@@ -9,6 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.subject_box').click(function() {
+                $(this).find('.click-to-show').toggleClass('active');
+            });
+        });
+    </script>
     <script src="https://kit.fontawesome.com/a1320d93f1.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,8 +24,11 @@
 <header>
     <nav>
         <a href="{% url 'portfolio:home' %}"><h2>Home</h2></a>
-        <a href="{% url 'portfolio:blog' %}"><h2>Blog</h2></a>
+        <a href="{% url 'portfolio:about_me' %}"><h2>About Me</h2></a>
+        <a href="{% url 'portfolio:course_subjects' %}"><h2>Course</h2></a>
+        <a href="{% url 'portfolio:projects' %}"><h2>Projects</h2></a>
         <a href="{% url 'portfolio:contacts' %}"><h2>Contacts</h2></a>
+        <a href="{% url 'portfolio:blog' %}"><h2>Blog</h2></a>
     </nav>
 </header>
 

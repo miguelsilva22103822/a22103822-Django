@@ -25,12 +25,20 @@ def contacts(request):
     return render(request, 'portfolio/contacts.html', contacts_social)
 
 
+def about_me(request):
+    return render(request, 'portfolio/about_me.html')
+
+
+def projects(request):
+    return render(request, 'portfolio/projects.html')
+
+
 def add_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('portfolio:blog')  # Assuming you have a URL pattern named 'posts_list' for displaying all posts
+            return redirect('portfolio:blog')
     else:
         form = PostForm()
 
@@ -42,6 +50,17 @@ def delete_post(request, post_id):
 
     if request.method == 'POST':
         post.delete()
-        return redirect('portfolio:blog')  # Redirect to the page displaying all posts after deletion
+        return redirect('portfolio:blog')
 
     return render(request, 'portfolio/blog.html', {'post': post})
+
+
+def course_subjects(request):
+    context = {
+        'years': Year.objects.all(),
+        'semesters': Semester.objects.all(),
+        'subjects': Subject.objects.all(),
+        'persons': Person.objects.all(),
+    }
+
+    return render(request, 'portfolio/course_subjects.html', context)

@@ -1,0 +1,24 @@
+<!-- projects.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% load static %}
+
+{% block main %}
+    <div id="center_projects">
+        <div id="width_limit">
+            <div class="projects_container">
+                <div>
+                    <div class="project_image">
+                        <img src="{% static 'media/homeBg.jpg' %}" alt="">
+                    </div>
+
+                    <div class="project_text">
+                        <h2>Controlador de PH</h2>
+                        <p>Utiliza um sensor de PH e um display LCD para permitir monitorizar e controlar o PH de um corpo de àgua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
