@@ -1,0 +1,20 @@
+<!-- login.html -->
+
+{% extends 'portfolio/layout.html' %}
+
+{% load static %}
+
+{% block main %}
+    <div class="center">
+        {% if message %}
+            <div>{{ message }}</div>
+            <a href="{% url 'portfolio:logout_view' %}">Logout</a>
+        {% endif %}
+        <form action="{% url 'portfolio:login' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">test</button>
+        </form>
+    </div>
+{% endblock %}

@@ -23,7 +23,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: aliceblue;
+    background-color: rgb(240, 225, 120);
 }
 
 h1 {
@@ -33,13 +33,11 @@ h1 {
 
 nav {
     background-color: rgb(0, 75, 120);
-    display: flex;
-    align-items: normal;
-    justify-content: center;
+    display: block;
+    text-align: center;
 }
 
 nav a {
-
     background-color: rgb(0, 75, 120);
     padding-left: 2rem;
     padding-right: 2rem;
@@ -47,8 +45,12 @@ nav a {
     display: flex;
 }
 
+footer {
+    display: none;
+}
+
 nav a:hover {
-    background-color: aliceblue;
+    background-color: rgb(240, 225, 120);
     color: black;
 }
 
@@ -76,6 +78,7 @@ nav a:hover {
     justify-content: center;
     width: 100%;
     text-align: center;
+    padding-bottom: 40px;
 }
 
 .container {
@@ -139,14 +142,14 @@ nav a:hover {
     margin-top: 1.5rem;
 }
 
-#contacts {
+.contacts {
     display: flex;
     flex-wrap: wrap;
-    border: 4px solid rgb(0, 75, 120);
     margin: 1rem 1rem 1rem 1rem;
     width: auto;
     height: auto;
     border-radius: 4px;
+    border: none;
 }
 
 .contact {
@@ -224,19 +227,7 @@ nav a:hover {
 }
 
 footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    background-color: rgb(0, 75, 120);
-    color: white;
-}
-
-footer > h2 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    display: none;
 }
 
 .about_me_div {
@@ -277,16 +268,16 @@ footer > h2 {
     display: flex;
     padding: 15px;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 #width_limit {
     background-color: aliceblue;
-    max-width: 60vw;
 }
 
 .projects_container > div {
     margin: 15px;
-    width: 600px;
+    width: 550px;
     height: 200px;
     background-color: white;
     border-radius: 15px;
@@ -304,22 +295,153 @@ footer > h2 {
 .project_image > img {
     object-fit: cover;
     width: 30%;
-    height: 100%;
+    height: 80%;
     display: block;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translate(0, -50%);
-    border-radius: 15px 0 0 15px;
+    border-radius: 15px 0 0 0;
 }
 
 .project_text {
     position: absolute;
     width: 70%;
+    max-height: 80%;
     right: 0;
-    padding: 10px
+    padding: 10px;
+    overflow: hidden;
 }
 
 .project_text p {
-   text-align: justify;
+    text-align: justify;
+}
+
+.project_link {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    right: 0;
+    bottom: 0;
+}
+
+.project_link a {
+    background-color: rgb(0, 75, 120);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+}
+
+.project_link a:hover {
+    background-color: rgb(240, 225, 120);
+    color: black;
+}
+
+.like_button {
+    border: none;
+    background-color: rgb(0, 75, 120);
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.like_button:hover {
+    border: none;
+    background-color: rgb(240, 225, 120);
+    padding: 10px;
+    color: black;
+}
+
+.add_comment_button {
+    border: none;
+    background-color: rgb(0, 75, 120);
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.add_comment_button:hover {
+    border: none;
+    background-color: rgb(240, 225, 120);
+    padding: 10px;
+    color: black;
+}
+
+.comment_container {
+    flex-flow: column;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+@media (min-width: 900px) {
+    nav {
+        background-color: rgb(0, 75, 120);
+        display: flex;
+        align-items: normal;
+        justify-content: center;
+    }
+
+    footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-color: rgb(0, 75, 120);
+        color: white;
+    }
+
+    footer > h2 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.delete_button {
+    border: none;
+    background-color: white;
+    padding: 10px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete_button:hover {
+    border: none;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
 }
