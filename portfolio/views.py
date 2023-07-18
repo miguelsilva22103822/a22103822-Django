@@ -12,12 +12,6 @@ from django.urls import reverse
 from .models import *
 from .forms import *
 
-from bs4 import BeautifulSoup
-import requests
-import csv
-
-import datetime
-
 
 def home(request):
     return render(request, 'portfolio/home.html')
