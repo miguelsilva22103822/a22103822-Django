@@ -76,6 +76,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     text-align: center;
     padding-bottom: 40px;
@@ -417,6 +418,19 @@ footer {
     footer > h2 {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .projects_container > div {
+        width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects_container > div {
+        width: 260px;
+        height: 300px;
     }
 }
 
