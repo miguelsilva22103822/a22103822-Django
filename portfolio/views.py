@@ -1,3 +1,5 @@
+import time
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
@@ -9,6 +11,12 @@ from django.urls import reverse
 
 from .models import *
 from .forms import *
+
+from bs4 import BeautifulSoup
+import requests
+import csv
+
+import datetime
 
 
 def home(request):

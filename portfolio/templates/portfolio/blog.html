@@ -1,9 +1,15 @@
 {% extends 'portfolio/layout.html' %}
+{% load static %}
 
 {% block main %}
+    <video autoplay loop muted>
+        <source src="{% static 'media/video/video (1080p).mp4' %}" type="video/mp4">
+        <!-- Add additional source tags for different video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
     <div class="center">
         <div class="container">
-            <h1>Blog</h1>
+            <h1 id="blog_title">Blog</h1>
             <div id="blog">
                 {% for post in posts %}
                     <div>

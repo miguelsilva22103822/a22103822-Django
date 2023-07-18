@@ -5,16 +5,16 @@
 {% load static %}
 
 {% block main %}
-    <div class="center">
+    <div class="login_container">
         {% if message %}
             <div>{{ message }}</div>
             <a href="{% url 'portfolio:logout_view' %}">Logout</a>
         {% endif %}
-        <form action="{% url 'portfolio:login' %}" method="post" style="display: inline;">
+        <form action="{% url 'portfolio:login' %}" method="post">
             {% csrf_token %}
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-            <button type="submit">test</button>
+            <button type="submit">Login</button>
         </form>
     </div>
 {% endblock %}

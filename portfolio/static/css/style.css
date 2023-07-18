@@ -83,7 +83,6 @@ nav a:hover {
 }
 
 .container {
-    background-color: aliceblue;
     margin: 1rem 15% 5rem 15%;
     display: flex;
     align-items: center;
@@ -232,10 +231,16 @@ footer {
 }
 
 .about_me_div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: aliceblue;
+    z-index: -1;
 }
 
 .about_me_div div {
@@ -273,6 +278,13 @@ footer {
 }
 
 #width_limit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    padding-top: 30px;
     background-color: aliceblue;
 }
 
@@ -459,3 +471,50 @@ footer {
     cursor: pointer;
     margin-top: 10px;
 }
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#blog_title {
+    color: white;
+}
+
+.login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.login_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_container form input {
+    font-size: 1.1em;
+    border: 2px solid black;
+    margin: 1px;
+    padding: 5px;
+}
+
+.login_container form button {
+    font-size: 1.1em;
+    border: 2px solid black;
+    margin: 1px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.login_container form button:hover {
+    background-color: rgb(240, 225, 120);
+}
+
